@@ -9,22 +9,12 @@ var should = chai.should();
 chai.use(chaiHttp);
 
 describe('Word test', function(done){
-  //Word.collection.drop();
-  // before(function(done){
-  //   Word.collection.drop(function(){
-  //     done();
-  //   });
-  // });
 
   beforeEach((done) => {
     Word.remove({}, (err) => { 
        done();         
     }); 
   });
-  // afterEach(function(done){
-  //   Word.collection.drop();
-  //   done();
-  // });
   
   it('Should list ALL words on /words GET', function(done){
     chai.request(server)
